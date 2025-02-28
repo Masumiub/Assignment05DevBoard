@@ -25,6 +25,8 @@ for(let i=0; i<completeBtns.length; i++ ){
     completeBtns[i].addEventListener("click", showalertAndCalculateTask);
     completeBtns[i].addEventListener("click", function(event){
         event.target.setAttribute('disabled', '');
+        let taskName = event.target.parentNode.parentNode.parentNode.getElementsByClassName('title')[0].innerText;
+        addActivityList(taskName);
     })
 }
 
@@ -43,12 +45,19 @@ function showalertAndCalculateTask(){
     let TotaltaskCompleted = parseInt(taskCompleted) + 1;
     document.getElementById('taskCompleted').innerText = TotaltaskCompleted;
 
+}
 
+
+function addActivityList(taskName){
     let activityContainer = document.getElementById('activityContainer');
     let li = document.createElement('li');
     let now = new Date();
-    li.innerHTML = `<p>You have completed at ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} </p>`;
+    li.innerHTML = `<p>You have completed ${taskName} at ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} </p>`;
     li.classList.add('listStyle');
     activityContainer.appendChild(li);
-
 }
+
+
+document.getElementById('questions').addEventListener('click', function(){
+    window.location.href="questions.html";
+})

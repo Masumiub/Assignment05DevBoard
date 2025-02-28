@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/da488cad18.js" crossorigin="anonymous"></script>
+    <title>DevBoard</title>
+    <style>
+        #mainbg {
+            background-color: #F4F7FF;
+        }
+
+        .listStyle {
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px;
+            background-color: #F4F7FF;
+        }
+    </style>
+</head>
+
+<body id="mainbg">
+    <header>
+        <nav>
+            <div class="customNavbar py-4">
+                <div class="container mx-auto px-2 lg:px-20 ">
+                    <div class="navbar sora-regular bg-white rounded-lg px-4">
+                        <div class="navbar-start">
+                            <div class="dropdown">
+                                <div tabindex="0" class="lg:hidden">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M4 6h16M4 12h8m-8 6h16" />
+                                    </svg>
+                                </div>
+                                <ul tabindex="0"
+                                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                    <li>29</li>
+                                </ul>
+                            </div>
+                            <img class="logo" src="assets/logo.png" alt="logo">
+                            <a class="text-3xl pl-2 logoText">Dev<span class="font-bold">Board</span></a>
+                        </div>
+
+                        <div class="navbar-end gap-4">
+                            <ul class="flex items-center gap-4">
+                                <li> <button
+                                        class="text-2xl font-bold bg-[#F4F7FF] px-4 py-2 rounded-full flex items-center gap-3 ">
+                                        <span><img src="assets/checkbox.png" alt="checkbox"></span> <span
+                                            id="taskCompleted">29</span> </button> </li>
+                                <li> <img src="assets/theme-btn.png" alt="themebtn"
+                                        class="bg-[#F4F7FF] p-2 rounded-full" id="changeThemeBtn"> </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="text-center">
+            <h1 class="font-bold text-2xl mb-4">Blogs</h1>
+        </div>
+        <div class="container mx-auto px-2 pb-10 mt-2 lg:px-20">
+            <div class="collapse collapse-arrow bg-white mb-3">
+                <input type="radio" name="my-accordion-2" checked="checked" /> 
+                <div class="collapse-title text-xl font-medium">
+                    What are the different ways to select an element in the DOM?
+                </div>
+                <div class="collapse-content"> 
+                  <p>hello</p>
+                </div>
+              </div>
+              <div class="collapse collapse-arrow bg-white mb-3">
+                <input type="radio" name="my-accordion-2" /> 
+                <div class="collapse-title text-xl font-medium">
+                    What is the difference between innerHTML, innerText, and textContent ?
+                </div>
+                <div class="collapse-content"> 
+                  <p>hello</p>
+                </div>
+              </div>
+              <div class="collapse collapse-arrow bg-white mb-3">
+                <input type="radio" name="my-accordion-2" /> 
+                <div class="collapse-title text-xl font-medium">
+                    What is event delegation in the DOM?
+                </div>
+                <div class="collapse-content"> 
+                  <p>hello</p>
+                </div>
+              </div>
+
+              <div class="collapse collapse-arrow bg-white mb-3">
+                <input type="radio" name="my-accordion-2" /> 
+                <div class="collapse-title text-xl font-medium">
+                    What is event bubbling in the DOM?
+                </div>
+                <div class="collapse-content"> 
+                  <p>hello</p>
+                </div>
+              </div>
+
+              <div class="collapse collapse-arrow bg-white mb-3">
+                <input type="radio" name="my-accordion-2" /> 
+                <div class="collapse-title text-xl font-medium">
+                    How do you create, add, and remove elements using JavaScript?
+                </div>
+                <div class="collapse-content"> 
+                  <p>hello</p>
+                </div>
+              </div>
+        </div>
+    </main>
+</body>
+
+</html>
