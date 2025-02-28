@@ -11,6 +11,12 @@
         #mainbg{
             background-color: #F4F7FF;
         }
+        .listStyle{
+            padding: 10px;
+            border-radius: 10px;
+            margin: 15px;
+            background-color: #F4F7FF;
+        }
     </style>
 </head>
 <body id="mainbg">
@@ -40,7 +46,7 @@
                         <div class="navbar-end gap-4">
                             <ul class="flex items-center gap-4">
                                 <li> <button class="text-2xl font-bold bg-[#F4F7FF] px-4 py-2 rounded-full flex items-center gap-3 "> <span><img src="assets/checkbox.png" alt="checkbox"></span> <span id="taskCompleted">29</span> </button> </li>
-                                <li> <img src="assets/theme-btn.png" alt="themebtn" class="bg-[#F4F7FF] p-2 rounded-full"> </li>
+                                <li> <img src="assets/theme-btn.png" alt="themebtn" class="bg-[#F4F7FF] p-2 rounded-full" id="changeThemeBtn"> </li>
                             </ul>
                         </div>
                     </div>
@@ -55,7 +61,7 @@
             
             <div class="w-full md:w-3/4 ">
                 <div class="bg-white rounded-lg p-4 h-screen">
-                    <div class="top3cards flex items-center justify-around gap-3 mt-3">
+                    <div class="top3cards flex items-stretch justify-around gap-3 mt-3">
                         <div class="w-full md:w-1/4 bg-[#F4F7FF] rounded-lg justify-center p-3">
                             <div class="flex items-center gap-2">
                                 <div>
@@ -63,7 +69,7 @@
                                 </div>
                                 <div>
                                     <p>Task Assigned</p>
-                                    <h1 class="text-3xl font-bold" id="task-assigned">05</h1>
+                                    <h1 class="text-3xl font-bold" id="task-assigned">06</h1>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +93,7 @@
                                 </div>
                                 <div>
                                     <p>Wed</p>
-                                    <p>Feb 28, 2025</p>
+                                    <p id="todaysDate"></p>
                                 </div>
                             </div>
                         </div>
@@ -112,14 +118,14 @@
                                     <p class="text-sm">21 March 2025</p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary text-white">Completed</button>
+                                    <button class="btn btn-primary text-white completeBtn">Completed</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="bg-[#F4F7FF] p-4 rounded-lg">
                             <button class="bg-base-200 py-2 px-4 rounded-lg my-2 text-xs">ShopEase</button>
-                            <h1 class="text-xl mb-3">Fix Mobile Button Issue</h1>
+                            <h1 class="text-xl mb-3">Add Dark Mode</h1>
 
                             <div class="bg-white rounded-lg p-4">
                                 <p class="text-xs">Debug using Chrome DevTools, check for overlapping...</p>
@@ -133,14 +139,14 @@
                                     <p class="text-sm">21 March 2025</p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary text-white">Completed</button>
+                                    <button class="btn btn-primary text-white completeBtn">Completed</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="bg-[#F4F7FF] p-4 rounded-lg">
                             <button class="bg-base-200 py-2 px-4 rounded-lg my-2 text-xs">ShopEase</button>
-                            <h1 class="text-xl mb-3">Fix Mobile Button Issue</h1>
+                            <h1 class="text-xl mb-3">Optimize  Home page </h1>
 
                             <div class="bg-white rounded-lg p-4">
                                 <p class="text-xs">Debug using Chrome DevTools, check for overlapping...</p>
@@ -154,14 +160,14 @@
                                     <p class="text-sm">21 March 2025</p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary text-white">Completed</button>
+                                    <button class="btn btn-primary text-white completeBtn">Completed</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="bg-[#F4F7FF] p-4 rounded-lg">
                             <button class="bg-base-200 py-2 px-4 rounded-lg my-2 text-xs">ShopEase</button>
-                            <h1 class="text-xl mb-3">Fix Mobile Button Issue</h1>
+                            <h1 class="text-xl mb-3">Add new emoji 🤲</h1>
 
                             <div class="bg-white rounded-lg p-4">
                                 <p class="text-xs">Debug using Chrome DevTools, check for overlapping...</p>
@@ -175,14 +181,14 @@
                                     <p class="text-sm">21 March 2025</p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary text-white">Completed</button>
+                                    <button class="btn btn-primary text-white completeBtn">Completed</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="bg-[#F4F7FF] p-4 rounded-lg">
                             <button class="bg-base-200 py-2 px-4 rounded-lg my-2 text-xs">ShopEase</button>
-                            <h1 class="text-xl mb-3">Fix Mobile Button Issue</h1>
+                            <h1 class="text-xl mb-3">Integrate OpenAI API </h1>
 
                             <div class="bg-white rounded-lg p-4">
                                 <p class="text-xs">Debug using Chrome DevTools, check for overlapping...</p>
@@ -196,14 +202,14 @@
                                     <p class="text-sm">21 March 2025</p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary text-white">Completed</button>
+                                    <button class="btn btn-primary text-white completeBtn">Completed</button>
                                 </div>
                             </div>
                         </div>
 
                         <div class="bg-[#F4F7FF] p-4 rounded-lg">
                             <button class="bg-base-200 py-2 px-4 rounded-lg my-2 text-xs">ShopEase</button>
-                            <h1 class="text-xl mb-3">Fix Mobile Button Issue</h1>
+                            <h1 class="text-xl mb-3">Improve Job searching </h1>
 
                             <div class="bg-white rounded-lg p-4">
                                 <p class="text-xs">Debug using Chrome DevTools, check for overlapping...</p>
@@ -217,7 +223,7 @@
                                     <p class="text-sm">21 March 2025</p>
                                 </div>
                                 <div>
-                                    <button class="btn btn-primary text-white">Completed</button>
+                                    <button class="btn btn-primary text-white completeBtn">Completed</button>
                                 </div>
                             </div>
                         </div>
@@ -240,7 +246,7 @@
                         <hr>
                     </div>
                     <ul id="activityContainer">
-                        <li id="activity">Task 1</li>
+                        <li id="activity"></li>
                     </ul>
                 </div>
             </div>
