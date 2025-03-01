@@ -41,7 +41,7 @@
 
                         <div class="navbar-end gap-4">
                             <ul class="flex items-center gap-4">
-                                <li> <button class="btn btn-primary" id="back-to-board">Back to Board</button> </li>
+                                <li> <button class="btn btn-primary text-white" id="back-to-board">Back to Board</button> </li>
                             </ul>
                         </div>
                     </div>
@@ -64,23 +64,23 @@
                     There are different ways to select an element in the DOM.
                     Such as: <br>
                     1. getElementById():
-                    Here, this selects a single element by its unique id.
+                    This selects a single element by its unique id.
 
                     <br>
                     2. getElementByClassName():
-                    Here, this selects all elements with a class name.
+                    This selects all elements with a class name.
 
                     <br>
                     3. getElementByTagName():
-                    Here, this selects all elements with a html tag.
+                    This selects all elements with a html tag.
 
                     <br>
                     4. querySelector():
-                    Here, this selects the first element matching a CSS selector.
+                    This selects the first element matching a CSS selector.
 
                     <br>
                     5. querySelectorAll():
-                    Here, this selects all elements matching a CSS selector.
+                    This selects all elements matching a CSS selector.
                   </p>
                 </div>
               </div>
@@ -94,7 +94,7 @@
                   <p>
                     innerHTML: Gets or sets HTML content which includes tags  and formatting inside a HTML element. <br>
                     innerText: Gets or sets visible text only. It does not show any hidden text. It doesn't include HTML tags.  <br>
-                    textContent: Gets or sets all text content, including hidden text (regardless of CSS display). It does not parse HTML tags
+                    textContent: Gets or sets all text content, including hidden text (regardless of CSS display). It does not parse HTML tags.
                   </p>
                 </div>
               </div>
@@ -117,7 +117,7 @@
                             < li >Item 3< / li > <br>
                         < / ul>
                     </code>
-                    <br>
+                    <br><br>
                     <code>
                         document.getElementById('parentList').addEventListener('click', (event) => { <br>
                             if (event.target.tagName === 'LI') { <br>
@@ -125,6 +125,8 @@
                             } <br>
                         });     <br>                    
                     </code>
+                    <br>
+                    If we click on item 1, the output will be: "Item clicked:" "Item 1" <br> <br>
                     When we click a < li >, the click event bubbles up to the < ul >. <br>
                     The listener on < ul > sees the event and checks if the event.target was a < li >.
                 </p>
