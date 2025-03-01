@@ -1,14 +1,18 @@
 // console.log("Assignment 05");
-function formateDateISO(date){
-    let isoString  = date.toISOString();
-    let formattedDate = isoString.split("T")[0];
+function formateDate(date){
+    let formattedDate = date.toLocaleDateString('en-US', {
+        month: 'short',   
+        day: '2-digit',   
+        year: 'numeric'   
+    });
     return formattedDate;
+
 }
 let currentDate = new Date();
-document.getElementById('todaysDate').innerText = formateDateISO(currentDate);
+document.getElementById('todaysDate').innerText = formateDate(currentDate);
 
-const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-const d = new Date();
+let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let d = new Date();
 let day = weekdays[d.getDay()];
 document.getElementById('dayName').innerHTML = day;
 
