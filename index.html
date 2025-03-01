@@ -24,7 +24,7 @@
         <nav>
             <div class="customNavbar py-4">
                 <div class="container mx-auto px-2 lg:px-20 ">
-                    <div class="navbar sora-regular bg-white rounded-lg px-4">
+                    <div class="navbar bg-white rounded-lg px-4">
                         <div class="navbar-start">
                             <div class="dropdown">
                                 <div tabindex="0" class="lg:hidden">
@@ -60,8 +60,8 @@
         <div class="flex flex-col  md:flex-row gap-4 items-stretch">
             
             <div class="w-full md:w-3/4 ">
-                <div class="bg-white rounded-lg p-4 h-screen">
-                    <div class="top3cards flex items-stretch justify-around gap-3 mt-3">
+                <div class="bg-white rounded-lg p-4 md:h-screen">
+                    <div class="top3cards flex flex-col md:flex-row items-stretch justify-around gap-3 mt-3">
                         <div class="w-full md:w-1/4 bg-[#F4F7FF] rounded-lg justify-center p-3">
                             <div class="flex items-center gap-2">
                                 <div>
@@ -92,7 +92,7 @@
                                     <img src="assets/calender.png" alt="checkbox" class="bg-white rounded-full p-3">
                                 </div>
                                 <div>
-                                    <p>Wed</p>
+                                    <p id="dayName"></p>
                                     <p id="todaysDate"></p>
                                 </div>
                             </div>
@@ -101,7 +101,7 @@
 
                     <hr class="mt-4">
 
-                    <div class="mt-6 grid gap-6 grid-cols-2 md:grid-cols-3">
+                    <div class="mt-6 grid gap-6 grid-cols-1 md:grid-cols-3">
                         <div class="bg-[#F4F7FF] p-4 rounded-lg">
                             <button class="bg-base-200 py-2 px-4 rounded-lg my-2 text-xs">ShopEase</button>
                             <h1 class="text-xl mb-3 title">Fix Mobile Button Issue</h1>
@@ -234,7 +234,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/4">
-                <div class="bg-white rounded-lg h-screen">
+                <div class="bg-white rounded-lg md:h-screen">
                     <div class="text-center">
                         <div class="flex items-center justify-center gap-3 py-5">
                             <div>

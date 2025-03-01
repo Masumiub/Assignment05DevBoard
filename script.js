@@ -1,5 +1,5 @@
 // console.log("Assignment 05");
-let formateDateISO = (date) =>{
+function formateDateISO(date){
     let isoString  = date.toISOString();
     let formattedDate = isoString.split("T")[0];
     return formattedDate;
@@ -7,6 +7,10 @@ let formateDateISO = (date) =>{
 let currentDate = new Date();
 document.getElementById('todaysDate').innerText = formateDateISO(currentDate);
 
+const weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const d = new Date();
+let day = weekdays[d.getDay()];
+document.getElementById('dayName').innerHTML = day;
 
 document.getElementById("changeThemeBtn").addEventListener('click', function(){
     let randomColor = Math.floor(Math.random()*16777215).toString(16);
@@ -52,7 +56,7 @@ function addActivityList(taskName){
     let activityContainer = document.getElementById('activityContainer');
     let li = document.createElement('li');
     let now = new Date();
-    li.innerHTML = `<p>You have completed ${taskName} at ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()} </p>`;
+    li.innerHTML = `<p>You have completed <b>${taskName}</b> at ${now.toLocaleString('en-US')}. </p>`;
     li.classList.add('listStyle');
     activityContainer.appendChild(li);
 }

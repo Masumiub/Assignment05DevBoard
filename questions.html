@@ -12,13 +12,6 @@
         #mainbg {
             background-color: #F4F7FF;
         }
-
-        .listStyle {
-            padding: 10px;
-            border-radius: 10px;
-            margin: 15px;
-            background-color: #F4F7FF;
-        }
     </style>
 </head>
 
@@ -27,7 +20,7 @@
         <nav>
             <div class="customNavbar py-4">
                 <div class="container mx-auto px-2 lg:px-20 ">
-                    <div class="navbar sora-regular bg-white rounded-lg px-4">
+                    <div class="navbar bg-white rounded-lg px-4">
                         <div class="navbar-start">
                             <div class="dropdown">
                                 <div tabindex="0" class="lg:hidden">
@@ -48,12 +41,7 @@
 
                         <div class="navbar-end gap-4">
                             <ul class="flex items-center gap-4">
-                                <li> <button
-                                        class="text-2xl font-bold bg-[#F4F7FF] px-4 py-2 rounded-full flex items-center gap-3 ">
-                                        <span><img src="assets/checkbox.png" alt="checkbox"></span> <span
-                                            id="taskCompleted">29</span> </button> </li>
-                                <li> <img src="assets/theme-btn.png" alt="themebtn"
-                                        class="bg-[#F4F7FF] p-2 rounded-full" id="changeThemeBtn"> </li>
+                                <li> <button class="btn btn-primary" id="back-to-board">Back to Board</button> </li>
                             </ul>
                         </div>
                     </div>
@@ -66,55 +54,146 @@
             <h1 class="font-bold text-2xl mb-4">Blogs</h1>
         </div>
         <div class="container mx-auto px-2 pb-10 mt-2 lg:px-20">
-            <div class="collapse collapse-arrow bg-white mb-3">
-                <input type="radio" name="my-accordion-2" checked="checked" /> 
-                <div class="collapse-title text-xl font-medium">
-                    What are the different ways to select an element in the DOM?
+            <div class="rounded-lg p-4 bg-white mb-3">
+                <div class="text-xl font-medium mb-2">
+                    Question-1: What are the different ways to select an element in the DOM?
                 </div>
-                <div class="collapse-content"> 
-                  <p>hello</p>
-                </div>
-              </div>
-              <div class="collapse collapse-arrow bg-white mb-3">
-                <input type="radio" name="my-accordion-2" /> 
-                <div class="collapse-title text-xl font-medium">
-                    What is the difference between innerHTML, innerText, and textContent ?
-                </div>
-                <div class="collapse-content"> 
-                  <p>hello</p>
-                </div>
-              </div>
-              <div class="collapse collapse-arrow bg-white mb-3">
-                <input type="radio" name="my-accordion-2" /> 
-                <div class="collapse-title text-xl font-medium">
-                    What is event delegation in the DOM?
-                </div>
-                <div class="collapse-content"> 
-                  <p>hello</p>
+                <hr>
+                <div class="content mt-2"> 
+                  <p>
+                    There are different ways to select an element in the DOM.
+                    Such as: <br>
+                    1. getElementById():
+                    Here, this selects a single element by its unique id.
+
+                    <br>
+                    2. getElementByClassName():
+                    Here, this selects all elements with a class name.
+
+                    <br>
+                    3. getElementByTagName():
+                    Here, this selects all elements with a html tag.
+
+                    <br>
+                    4. querySelector():
+                    Here, this selects the first element matching a CSS selector.
+
+                    <br>
+                    5. querySelectorAll():
+                    Here, this selects all elements matching a CSS selector.
+                  </p>
                 </div>
               </div>
 
-              <div class="collapse collapse-arrow bg-white mb-3">
-                <input type="radio" name="my-accordion-2" /> 
-                <div class="collapse-title text-xl font-medium">
-                    What is event bubbling in the DOM?
+              <div class="rounded-lg p-4 bg-white mb-3">
+                <div class="text-xl font-medium mb-2">
+                    Question-2: What is the difference between innerHTML, innerText, and textContent ?
                 </div>
-                <div class="collapse-content"> 
-                  <p>hello</p>
+                <hr>
+                <div class="content mt-2"> 
+                  <p>
+                    innerHTML: Gets or sets HTML content which includes tags  and formatting inside a HTML element. <br>
+                    innerText: Gets or sets visible text only. It does not show any hidden text. It doesn't include HTML tags.  <br>
+                    textContent: Gets or sets all text content, including hidden text (regardless of CSS display). It does not parse HTML tags
+                  </p>
                 </div>
               </div>
 
-              <div class="collapse collapse-arrow bg-white mb-3">
-                <input type="radio" name="my-accordion-2" /> 
-                <div class="collapse-title text-xl font-medium">
-                    How do you create, add, and remove elements using JavaScript?
+              <div class="rounded-lg p-4 bg-white mb-3">
+                <div class="text-xl font-medium mb-2">
+                    Question-3: What is event delegation in the DOM?
                 </div>
-                <div class="collapse-content"> 
-                  <p>hello</p>
+                <hr>
+                <div class="content mt-2"> 
+                  <p>Event delegation is a technique in the DOM where instead of attaching event listeners to multiple child elements, we attach a single event listener to a parent element.
+                    <br>
+
+                    That single listener takes advantage of event bubbling, so it can "catch" events from child elements when they bubble up to the parent. <br>
+                    For example: <br>
+                    <code>
+                        < ul id = "parentList" > <br>
+                            < li >Item 1< / li > <br>
+                            < li >Item 2< / li > <br>
+                            < li >Item 3< / li > <br>
+                        < / ul>
+                    </code>
+                    <br>
+                    <code>
+                        document.getElementById('parentList').addEventListener('click', (event) => { <br>
+                            if (event.target.tagName === 'LI') { <br>
+                                console.log('Item clicked:', event.target.innerText); <br>
+                            } <br>
+                        });     <br>                    
+                    </code>
+                    When we click a < li >, the click event bubbles up to the < ul >. <br>
+                    The listener on < ul > sees the event and checks if the event.target was a < li >.
+                </p>
+                </div>
+              </div>
+
+              <div class="rounded-lg p-4 bg-white mb-3">
+                <div class="text-xl font-medium mb-2">
+                    Question-4: What is event bubbling in the DOM?
+                </div>
+                <hr>
+                <div class="content mt-2"> 
+                  <p>Event bubbling is a behavior in the DOM where an event triggered on a child element "bubbles up" to its parent elements.
+                    <br>
+                    When we click, input, or submit on an element, the event first fires on the target element (where the action happened), 
+                    and then it bubbles up through all its ancestors (parents, grandparents, etc.) until it reaches the document object.</p>
+
+                    <br>
+                    For example: <br>
+                    < div id = "parent" > <br>
+                        < button id = "child" > Click me < / button > <br>
+                    < / div > <br>
+
+                    <br>
+
+                    document.getElementById('parent').addEventListener('click', () => { <br>
+                        console.log('Parent clicked'); <br>
+                    });
+                    document.getElementById('child').addEventListener('click', () => { <br>
+                        console.log('Button clicked'); <br>
+                    }); <br>
+                    <br>
+                    When we click the button: <br>
+                    Output will be:  <br>
+                    Button clicked <br>
+                    Parent clicked <br>
+                    <br>
+                    Here, the click event fires on the button (#child). <br>
+                    Then the event bubbles up to the div (#parent), so the parent’s listener also fires.
+
+                </div>
+              </div>
+
+              <div class="rounded-lg p-4 bg-white mb-3">
+                <div class="text-xl font-medium mb-2">
+                    Question-5: How do you create, add, and remove elements using JavaScript?
+                </div>
+                <hr>
+                <div class="content mt-2"> 
+                  <p>There are many ways to add or remove elements in js. Such as: <br>
+                    1. Create Elements: <br>
+                    let newElement = document.createElement('div'); <br>
+                    This creates a < div > element. We can also add attributes, text, or innerHTML. <br>
+                    <br>
+                    2. appendChild: <br>
+                    document.body.appendChild(newElement); <br>
+                    This newElement is Appended to a Parent at End. <br>
+                    <br>
+                    3. Remove Elements: <br>
+                    let elementToRemove = document.getElementById('someElement'); <br>
+                    elementToRemove.remove(); <br>
+                    Here, we are removeing a element by id using remove() function.
+                </p>
                 </div>
               </div>
         </div>
     </main>
+
+    <script src="handle.js"></script>
 </body>
 
 </html>
