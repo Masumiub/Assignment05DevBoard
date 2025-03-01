@@ -37,7 +37,7 @@ for(let i=0; i<completeBtns.length; i++ ){
 
 
 function showalertAndCalculateTask(){
-    alert("Task has been completed");
+    alert("Board updated Successfully");
     let taskAssigned = document.getElementById('task-assigned').innerText; 
     let RemainingtaskAssigned = parseInt(taskAssigned) - 1;
     document.getElementById('task-assigned').innerText = RemainingtaskAssigned;
@@ -56,7 +56,8 @@ function addActivityList(taskName){
     let activityContainer = document.getElementById('activityContainer');
     let li = document.createElement('li');
     let now = new Date();
-    li.innerHTML = `<p>You have completed <b>${taskName}</b> at ${now.toLocaleString('en-US')}. </p>`;
+    let time = now.toLocaleTimeString('en-US');
+    li.innerHTML = `<p>You have completed <b>${taskName}</b> at ${time}. </p>`;
     li.classList.add('listStyle');
     activityContainer.appendChild(li);
 }
