@@ -105,30 +105,27 @@
                 </div>
                 <hr>
                 <div class="content mt-2"> 
-                  <p>Event delegation is a technique in the DOM where instead of attaching event listeners to multiple child elements, we attach a single event listener to a parent element.
+                  <p>Event delegation is a technique where we add a event listener to a parent element, instead of adding event listener to each element.
                     <br>
-
-                    That single listener takes advantage of event bubbling, so it can "catch" events from child elements when they bubble up to the parent. <br>
-                    For example: <br>
+                    For example, we have a unordered list id="parentList" . 
+                    <br>
                     <code>
                         < ul id = "parentList" > <br>
-                            < li >Item 1< / li > <br>
-                            < li >Item 2< / li > <br>
-                            < li >Item 3< / li > <br>
+                            < li class = "item" > Item 1 < / li > <br>
+                            < li class = "item" > Item 2 < / li > <br>
+                            < li class = "item" > Item 3 < / li > <br>
                         < / ul>
                     </code>
                     <br><br>
                     <code>
-                        document.getElementById('parentList').addEventListener('click', (event) => { <br>
-                            if (event.target.tagName === 'LI') { <br>
-                                console.log('Item clicked:', event.target.innerText); <br>
-                            } <br>
-                        });     <br>                    
+                        document.getElementById('parentList').addEventListener('click', function (event){ <br>
+                            event.target.parentNode.removeChild(event.target); <br>
+                        })<br>
+                        
                     </code>
                     <br>
-                    If we click on item 1, the output will be: "Item clicked:" "Item 1" <br> <br>
-                    When we click a < li >, the click event bubbles up to the < ul >. <br>
-                    The listener on < ul > sees the event and checks if the event.target was a < li >.
+                    If we click on Item 1, Item 1 will be removed. <br> <br>
+                    When we click a li, the click event bubbles up to the ul and then removes the targeted child. <br>
                 </p>
                 </div>
               </div>
@@ -139,33 +136,31 @@
                 </div>
                 <hr>
                 <div class="content mt-2"> 
-                  <p>Event bubbling is a behavior in the DOM where an event triggered on a child element "bubbles up" to its parent elements.
+                  <p>Event bubbling is a concept where we click on a element or when a event occurs, that event bubbles up to its parent and ancestor elements in the DOM, until it reaches the root element. For any html file, document is the root element.
                     <br>
-                    When we click, input, or submit on an element, the event first fires on the target element (where the action happened), 
-                    and then it bubbles up through all its ancestors (parents, grandparents, etc.) until it reaches the document object.</p>
+                    </p>
 
                     <br>
-                    For example: <br>
-                    < div id = "parent" > <br>
-                        < button id = "child" > Click me < / button > <br>
+                    For example: We have a button in a card.<br>
+                    < div id = "card" > <br>
+                        < button id = "btn" > Click Here... < / button > <br>
                     < / div > <br>
 
                     <br>
 
-                    document.getElementById('parent').addEventListener('click', () => { <br>
-                        console.log('Parent clicked'); <br>
+                    document.getElementById('card').addEventListener('click', () => { <br>
+                        console.log('Card clicked'); <br>
                     });
-                    document.getElementById('child').addEventListener('click', () => { <br>
+                    document.getElementById('btn').addEventListener('click', () => { <br>
                         console.log('Button clicked'); <br>
                     }); <br>
                     <br>
                     When we click the button: <br>
                     Output will be:  <br>
                     Button clicked <br>
-                    Parent clicked <br>
+                    Card clicked <br>
                     <br>
-                    Here, the click event fires on the button (#child). <br>
-                    Then the event bubbles up to the div (#parent), so the parent’s listener also fires.
+                    Here, if we click on the button, the event bubbles up to the div(card) and shows output like, Button clicked, Card clicked.
 
                 </div>
               </div>
@@ -178,17 +173,17 @@
                 <div class="content mt-2"> 
                   <p>There are many ways to add or remove elements in js. Such as: <br>
                     1. Create Elements: <br>
-                    let newElement = document.createElement('div'); <br>
-                    This creates a < div > element. We can also add attributes, text, or innerHTML. <br>
+                    let newp = document.createElement('p'); <br>
+                    This creates a < p > paragraph. We can also add attributes, text, or innerHTML. <br>
                     <br>
                     2. appendChild: <br>
                     document.body.appendChild(newElement); <br>
                     This newElement is Appended to it's Parent(Body) at the end. <br>
                     <br>
                     3. Remove Elements: <br>
-                    let elementToRemove = document.getElementById('someElement'); <br>
-                    elementToRemove.remove(); <br>
-                    Here, we are removing a element by id using remove() function.
+                    let customBox = document.getElementById('customBox'); <br>
+                    customBox.remove(); <br>
+                    Here, we are removing a element, id named 'customBox', using remove() function.
                 </p>
                 </div>
               </div>
